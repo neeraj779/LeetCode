@@ -4,8 +4,8 @@ public:
   void sortColors(vector<int> &arr)
   {
     int i = 0;
-    int j = 0;
     int k = arr.size() - 1;
+    int j = 0;
     while (j <= k)
     {
       if (arr[j] == 0)
