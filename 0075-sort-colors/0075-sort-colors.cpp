@@ -1,30 +1,16 @@
 class Solution
 {
 public:
-  void sortColors(vector<int> &arr)
-  {
-    int i = 0;
-    int k = arr.size() - 1;
-    int j = 0;
-    while (j <= k)
-    {
-      if (arr[j] == 0)
-      {
-        swap(arr[i++], arr[j++]);
-      }
-      else if (arr[j] == 1)
-      {
-        j++;
-      }
-      else
-      {
-        swap(arr[j], arr[k--]);
-      }
+  void sortColors(vector<int>& arr) {
+    int zero = 0, two = arr.size()-1;
+    for (int i = 0; i <= two;) {
+        if (arr[i] == 0) {
+            swap(arr[i++], arr[zero++]);
+        } else if (arr[i] == 2) {
+            swap(arr[i], arr[two--]);
+        } else {
+            i++;
+        }
     }
-
-    for (int i : arr)
-    {
-      cout << i << ",";
-    }
-  }
+}
 };
