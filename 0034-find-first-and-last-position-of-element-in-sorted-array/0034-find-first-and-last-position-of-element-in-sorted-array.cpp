@@ -6,6 +6,7 @@ public:
         int end=nums.size()-1;        
         
         int l = search(nums, start, end, target, true);
+        if (l == -1) return v;
         int h = search(nums, start, end, target, false);
         v[0] = l;
         v[1] = h;
