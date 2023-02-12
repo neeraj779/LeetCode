@@ -20,6 +20,7 @@ public:
             }
         }
         
+        
         pivot = s;
         int ans;
         if (target >= nums[pivot] && target <= nums[nums.size() - 1])
