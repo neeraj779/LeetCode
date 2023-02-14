@@ -9,6 +9,7 @@ public:
         while(s<=e){
             mid = s + (e-s)/2;
             long long int square = mid*mid;
+            
             if(square == x) return mid;
             else if(square < x) {
                 ans=mid; 
