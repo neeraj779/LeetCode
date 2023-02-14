@@ -15,6 +15,7 @@ public:
                 ans=mid; 
                 s = mid+1;
             }
+            
             else e = mid-1;
         }
         return ans;
