@@ -1,33 +1,38 @@
 class Solution
 {
 private:
-  void combination(vector<int> &candidates, int target, vector<vector<int>> &arr, vector<int> &ds, int ind)
+  void combination(vector<int> &candidates, int target, vector<vector<int>> &result, vector<int> &current_combination, int index)
   {
-
-    if (ind == candidates.size())
+    // If the index is equal to the size of the candidates array,
+    // and the target is zero, then we have found a valid combination
+    if (index == candidates.size())
     {
       if (target == 0)
       {
-        arr.push_back(ds);
+        result.push_back(current_combination);
       }
       return;
     }
-      
-    if(candidates[ind]<=target){
-    ds.push_back(candidates[ind]);
-    combination(candidates, target-candidates[ind], arr, ds, ind);
-    ds.pop_back();
+
+    // If the current candidate is less than or equal to the target,
+    // then we can add it to the current combination
+    if (candidates[index] <= target)
+    {
+      current_combination.push_back(candidates[index]);
+      combination(candidates, target - candidates[index], result, current_combination, index);
+      current_combination.pop_back();
     }
-    combination(candidates, target, arr, ds, ind + 1);
+    // We can also skip the current candidate and move on to the next one
+    combination(candidates, target, result, current_combination, index + 1);
   }
 
 public:
   vector<vector<int>> combinationSum(vector<int> &candidates, int target)
   {
-    vector<vector<int>> arr;
-    vector<int> ds;
-    combination(candidates, target, arr, ds, 0);
-     
-      return arr;
+    vector<vector<int>> result;
+    vector<int> current_combination;
+    combination(candidates, target, result, current_combination, 0);
+
+    return result;
   }
 };
