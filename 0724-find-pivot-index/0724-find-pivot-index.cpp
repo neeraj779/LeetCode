@@ -8,9 +8,7 @@ public:
         }
         
         for(int i=0; i<n;i++){
-            int leftSum = prefixSum[i];
-            int rightSum = prefixSum[n] - prefixSum[i+1];
-            if(leftSum==rightSum) return i;   
+            if(prefixSum[i]==prefixSum[n] - prefixSum[i+1]) return i;   
         }
         return -1;
     }
