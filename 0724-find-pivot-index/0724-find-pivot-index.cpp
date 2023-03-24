@@ -1,14 +1,16 @@
 class Solution {
 public:
     int pivotIndex(vector<int>& nums) {
-        vector<int> prefixSum(nums.size()+1);
+        vector<int> prefixSum(nums.size()+1); //  zero default 
         int n = nums.size();
         for(int i=0; i<n; i++){
             prefixSum[i+1] = prefixSum[i] + nums[i];
         }
         
         for(int i=0; i<n;i++){
-            if(prefixSum[i]==prefixSum[n] - prefixSum[i+1]) return i;   
+            int leftSum = prefixSum[i];
+            int rightSum = prefixSum[n] - prefixSum[i+1];
+            if(leftSum==rightSum) return i;   
         }
         return -1;
     }
