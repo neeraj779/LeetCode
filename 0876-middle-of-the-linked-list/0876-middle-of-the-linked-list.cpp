@@ -40,6 +40,7 @@ public:
             if(fast!=NULL) fast = fast->next;
             slow = slow->next;
         }
+        
         return slow;
     }
 };
