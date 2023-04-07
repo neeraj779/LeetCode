@@ -30,7 +30,6 @@ public:
         
         if (length < k) 
             return head;
-
         
         while(curr != NULL && count < k){
             next = curr->next;
