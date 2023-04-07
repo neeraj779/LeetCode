@@ -21,6 +21,7 @@ public:
         int length = 0;
         int count = 0;
         
+        //for checking if elements are sufficient for reverse
         while(curr != NULL){
             length++;
             curr = curr->next;
@@ -28,9 +29,8 @@ public:
         
         curr = head;
         
-        if (length < k) {
+        if (length < k) 
             return head;
-        }
 
         
         while(curr != NULL && count < k){
@@ -40,8 +40,6 @@ public:
             curr = next;
             count++;
         }
-        
-        if(length<k) return prev;
         
         // next reverse using recursion
         if(next != NULL){
