@@ -17,6 +17,7 @@ public:
             count++;
             temp = temp->next;
         }
+        
         int mid = count/2;
         temp = head;
         while(mid){
