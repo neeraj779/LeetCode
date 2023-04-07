@@ -42,6 +42,13 @@ public:
         // ListNode *prev = NULL;
         // ListNode *curr = head;
         // ListNode *forw = NULL;
+        // while(curr != NULL){
+        //     forw = curr->next;
+        //     curr->next = prev;
+        //     prev = curr;
+        //     curr = forw;
+        // }
+        // return prev;
 
         // recReverse(head, curr, prev);
         // return head;
