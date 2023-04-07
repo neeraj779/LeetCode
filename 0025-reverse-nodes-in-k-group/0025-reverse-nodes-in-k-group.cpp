@@ -14,6 +14,7 @@ public:
         if(head==NULL || k==1) return head;
         
         //reverse first k nodes
+        
         ListNode* prev = NULL;
         ListNode* curr = head;
         ListNode* next = NULL;
