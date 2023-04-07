@@ -17,11 +17,7 @@ public:
             count++;
             temp = temp->next;
         }
-        int mid;
-        if(count&1) mid = count/2;
-        else mid = (count/2);
-        cout<<mid<<" "<<count;
-        
+        int mid = count/2;
         temp = head;
         while(mid){
             temp = temp->next;
