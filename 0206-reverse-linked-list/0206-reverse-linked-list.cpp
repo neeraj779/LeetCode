@@ -49,7 +49,6 @@ public:
         //     curr = forw;
         // }
         // return prev;
-
         // recReverse(head, curr, prev);
         // return head;
         return reverse(head);
