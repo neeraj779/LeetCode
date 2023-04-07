@@ -26,7 +26,6 @@ public:
 //         }
 //         return temp;      
         
-        
         ListNode *fast = head->next;
         ListNode *slow = head; 
         
@@ -42,6 +41,5 @@ public:
             slow = slow->next;
         }
         return slow;
-        
     }
 };
