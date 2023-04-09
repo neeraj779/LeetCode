@@ -21,11 +21,6 @@ public:
             temp = temp->next;
         }
         
-        return nullptr;
-        
-        
-        
-        
 //         if (head == NULL)
 //             return head;
 
@@ -48,6 +43,6 @@ public:
 //                 return slow;
 //             }
 //         }
-//         return NULL;
+        return nullptr;
     }
 };
