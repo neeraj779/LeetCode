@@ -14,10 +14,9 @@ public:
         if (head == NULL)
             return head;
         
-        ListNode *slow = head;
-        ListNode *fast = head;
+        ListNode *slow = head, *fast = head;
 
-        while (slow != NULL && fast != NULL)
+        while (fast != NULL && fast->next != NULL)
         {
             fast = fast->next;
             if (fast != NULL)
@@ -25,20 +24,16 @@ public:
             slow = slow->next;
             if (slow == fast)
             {
-                break;
+                slow = head;
+                while(slow!=fast){
+                    slow = slow->next;
+                    fast = fast->next;
+                }
+                return slow;
+                
             }
         }
         
-        if (slow == NULL || fast == NULL)
-            return NULL;
-        
-        slow = head;
-        while (slow != fast)
-        {
-            fast = fast->next;
-            slow = slow->next;
-        }
-        
-        return fast;
+return NULL;
     }
 };
