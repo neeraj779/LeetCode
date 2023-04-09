@@ -16,7 +16,7 @@ public:
         
         ListNode *slow = head, *fast = head;
 
-        while (fast != NULL && fast->next != NULL)
+        while (fast && fast->next)
         {
             fast = fast->next;
             if (fast != NULL)
