@@ -18,7 +18,7 @@ private:
 public:
   Node *copyRandomList(Node *head)
   {
-    // step 1 clone the orginal list
+    // Step 1: Clone the original list by creating new nodes with the same values
     Node *cloneHead = NULL;
     Node *cloneTail = NULL;
 
@@ -29,7 +29,7 @@ public:
       temp = temp->next;
     }
 
-    // step 2 cloneNode add in between original list
+    // Step 2: Insert cloned nodes in between original nodes
     Node *originalNode = head;
     Node *cloneNode = cloneHead;
     while (originalNode != NULL)
@@ -43,20 +43,17 @@ public:
       cloneNode = next;
     }
 
-    // step 3 random pointer copy
-
+    // Step 3: Copy random pointers from original nodes to their clones
     temp = head;
     while (temp != NULL)
     {
       if (temp->next != NULL)
-      {
         temp->next->random = (temp->random) ? temp->random->next : temp->random;
-      }
+        
       temp = temp->next->next;
     }
 
-    // step revert the chnages
-
+    // Step 4: Revert changes to original list
     originalNode = head;
     cloneNode = cloneHead;
     while (originalNode != NULL)
@@ -70,6 +67,7 @@ public:
         cloneNode = cloneNode->next;
       }
     }
+
     return cloneHead;
   }
 };
