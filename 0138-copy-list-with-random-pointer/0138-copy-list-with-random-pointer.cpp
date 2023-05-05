@@ -67,7 +67,6 @@ public:
         cloneNode = cloneNode->next;
       }
     }
-
     return cloneHead;
   }
 };
