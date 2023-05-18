@@ -13,12 +13,13 @@ class Solution
 private:
   ListNode *solve(ListNode *first, ListNode *second)
   {
-      //if onlu one element in first list
-      if(first->next==NULL){
-          first->next = second;
-          return first;
-      }
-      
+    // if only one element in first list
+    if (first->next == NULL)
+    {
+      first->next = second;
+      return first;
+    }
+
     ListNode *curr1 = first;
     ListNode *next1 = curr1->next;
     ListNode *curr2 = second;
@@ -43,7 +44,7 @@ private:
       if (next1 == NULL)
       {
         curr1->next = curr2;
-        return first; 
+        return first;
       }
     }
     return first;
