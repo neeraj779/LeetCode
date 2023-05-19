@@ -26,8 +26,5 @@ public:
             prev->next = forw;
         }
         return dummyNode->next;
-        
-        
-        
     }
 };
