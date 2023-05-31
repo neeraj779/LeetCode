@@ -5,27 +5,27 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/01/18/pathsum1.jpg" style="width: 500px; height: 356px;">
-<pre style="position: relative;"><strong>Input:</strong> root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
+<pre><strong>Input:</strong> root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
 <strong>Output:</strong> true
 <strong>Explanation:</strong> The root-to-leaf path with the target sum is shown.
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong class="example">Example 2:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/01/18/pathsum2.jpg">
-<pre style="position: relative;"><strong>Input:</strong> root = [1,2,3], targetSum = 5
+<pre><strong>Input:</strong> root = [1,2,3], targetSum = 5
 <strong>Output:</strong> false
 <strong>Explanation:</strong> There two root-to-leaf paths in the tree:
 (1 --&gt; 2): The sum is 3.
 (1 --&gt; 3): The sum is 4.
 There is no root-to-leaf path with sum = 5.
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong class="example">Example 3:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> root = [], targetSum = 0
+<pre><strong>Input:</strong> root = [], targetSum = 0
 <strong>Output:</strong> false
 <strong>Explanation:</strong> Since the tree is empty, there are no root-to-leaf paths.
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
