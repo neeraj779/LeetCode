@@ -15,7 +15,7 @@ public:
     vector<vector<int>> verticalTraversal(TreeNode *root)
     {
         // Map to store nodes at each horizontal distance and level
-        map<int, map<int, multiset<int>>> nodeMap;
+        map<int, map<int, multiset<int>>> nodeMap; // Using multiset for automatic sorting
 
         // Queue to perform level order traversal
         queue<pair<TreeNode *, pair<int, int>>> q;
