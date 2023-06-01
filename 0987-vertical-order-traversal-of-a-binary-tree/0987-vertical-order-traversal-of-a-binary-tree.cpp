@@ -15,9 +15,9 @@ public:
     vector<vector<int>> verticalTraversal(TreeNode *root)
     {
         // Map to store nodes at each horizontal distance and level
-        // map<int, map<int, multiset<int>>> nodeMap; // Using multiset for automatic sorting
+        map<int, map<int, multiset<int>>> nodeMap; // Using multiset for automatic sorting
         
-        map<int, map<int, vector<int>>> nodeMap; // need to sort manually
+        // map<int, map<int, vector<int>>> nodeMap; // need to sort manually
 
 
         // Queue to perform level order traversal
@@ -43,9 +43,8 @@ public:
             int level = temp.second.second;
 
             // Store the node value in the map
-            // nodeMap[horizontalDistance][level].insert(currentNode->val); // for multiset
-            
-            nodeMap[horizontalDistance][level].push_back(currentNode->val);
+            nodeMap[horizontalDistance][level].insert(currentNode->val); // for multiset
+            // nodeMap[horizontalDistance][level].push_back(currentNode->val); // for vector
 
 
             // Enqueue left child if it exists, with updated horizontal distance and level
@@ -61,7 +60,7 @@ public:
         for (auto i : nodeMap) {
             vector<int> temp;
             for (auto j : i.second) {
-                sort(j.second.begin(), j.second.end()); // if we are using vector instead of multiset
+                // sort(j.second.begin(), j.second.end()); // if we are using vector instead of multiset
                 for (auto k : j.second) {
                     temp.push_back(k);
                 }
