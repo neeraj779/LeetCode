@@ -20,7 +20,7 @@ private:
         
         //check sum from back
         int size = v.size();
-        long long int pathSum = 0;
+        long int pathSum = 0;
         for(int i = size-1; i>=0; --i){
               pathSum += v[i];
             if(pathSum==targetSum)
