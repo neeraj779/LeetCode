@@ -20,7 +20,34 @@ private:
 public:
     vector<int> inorderTraversal(TreeNode* root) {
         vector<int> v;
-        solve(root, v);
+        // solve(root, v);
+
+        // morris traversal
+        TreeNode* curr = root;
+        while(curr != nullptr){
+            if(curr->left == nullptr){
+                v.push_back(curr->val);
+                curr = curr->right;
+            }
+            
+            else{
+                TreeNode *pred = curr->left; //ek left jao and then right jate raho
+                while(pred->right != NULL && pred->right != curr){
+                    pred = pred->right;
+                }
+                
+                if(pred->right == nullptr){
+                    pred->right = curr;
+                    curr = curr->left;
+                }
+                
+                else{
+                    pred->right = nullptr;
+                    v.push_back(curr->val);
+                    curr = curr->right;
+                }
+            }
+        }
         return v;
     }
 };
