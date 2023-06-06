@@ -32,7 +32,34 @@ private:
 public:
     int kthSmallest(TreeNode *root, int k)
     {
-        int i = 0;
-        return solve(root, k, i);
+        // int i = 0;
+        // return solve(root, k, i);
+        vector<int> v;
+        TreeNode* curr = root;
+        while(curr != nullptr){
+            if(curr->left == nullptr){
+                v.push_back(curr->val);
+                curr = curr->right;
+            }
+            
+            else{
+                TreeNode *pred = curr->left; //ek left jao and then right jate raho
+                while(pred->right != NULL && pred->right != curr){
+                    pred = pred->right;
+                }
+                
+                if(pred->right == nullptr){
+                    pred->right = curr;
+                    curr = curr->left;
+                }
+                
+                else{
+                    pred->right = nullptr;
+                    v.push_back(curr->val);
+                    curr = curr->right;
+                }
+            }
+        }
+        return v[k-1];
     }
 };
