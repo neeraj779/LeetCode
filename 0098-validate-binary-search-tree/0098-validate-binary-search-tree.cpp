@@ -10,16 +10,19 @@
  * };
  */
 class Solution {
+private:
+    bool solve(TreeNode* root, long long min, long long max){
+        if(!root) return 1;
+        
+        if(root->val > min && root->val < max){
+            bool left = solve(root->left, min, root->val);
+            bool right = solve(root->right, root->val, max);
+            return left && right;
+        }
+        return 0;
+    }
 public:
-    bool isValidBST(TreeNode* root, long long int min_val = LLONG_MIN, long long int max_val = LLONG_MAX) {
-        if (root == nullptr) {
-            return true;
-        }
-
-        if (root->val <= min_val || root->val >= max_val) {
-            return false;
-        }
-
-        return isValidBST(root->left, min_val, root->val) && isValidBST(root->right, root->val, max_val); 
+    bool isValidBST(TreeNode* root) {
+        return solve(root, LLONG_MIN, LLONG_MAX );
     }
 };
