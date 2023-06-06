@@ -9,19 +9,30 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 private:
-    void solve(TreeNode* root, vector<int> &v){
-        if(!root) return;
-        
-        solve(root->left, v);
-        v.push_back(root->val);
-        solve(root->right, v);
+    int solve(TreeNode *root, int k, int &i)
+    {
+        if (!root)
+            return -1;
+
+        // L
+        int left = solve(root->left, k, i);
+        if (left != -1)  // left subtree has k elements in it so return left element from left subtree itself
+            return left; // this will be the kth smallest element in the tree
+        // N
+        i++;
+        if (i == k)
+            return root->val;
+        // R
+        return solve(root->right, k, i); // if left subtree doesn't have k elements then check in right subtree
     }
+
 public:
-    int kthSmallest(TreeNode* root, int k) {
-        vector<int> v;
-        solve(root, v);
-        return v[k-1];
+    int kthSmallest(TreeNode *root, int k)
+    {
+        int i = 0;
+        return solve(root, k, i);
     }
 };
