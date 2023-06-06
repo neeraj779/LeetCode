@@ -15,19 +15,14 @@ public:
         TreeNode* curr = root;
         while(curr != nullptr){
             if(curr->left){
-                TreeNode *pred = curr->left; //ek left jao and then right jate raho
+                TreeNode *pred = curr->left; 
                 while(pred->right != nullptr)
                     pred = pred->right;
                 
                 pred->right = curr->right;
                 curr->right = curr->left;
-                // curr->left = nullptr;
+                curr->left = nullptr;
             }
-            curr = curr->right;
-        }
-        curr=root;
-        while(curr != nullptr){
-            curr->left = nullptr;
             curr = curr->right;
         }
     }
