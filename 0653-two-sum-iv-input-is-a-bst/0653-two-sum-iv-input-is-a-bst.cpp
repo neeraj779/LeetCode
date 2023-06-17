@@ -26,8 +26,8 @@ public:
         while(i<j){
             int sum = v[i] + v[j];
             if(sum == k) return 1;
-            if(sum > k) j--;
-            if(sum < k) i++;
+            else if(sum > k) j--;
+            else if(sum < k) i++;
         }
         return 0;
     }
