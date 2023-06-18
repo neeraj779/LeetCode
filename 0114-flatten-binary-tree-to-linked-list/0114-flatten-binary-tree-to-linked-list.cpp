@@ -10,20 +10,18 @@
  * };
  */
 class Solution {
+private:
+    void solve(TreeNode* root, TreeNode* &prev){
+        if(!root) return;
+        solve(root->right, prev);
+        solve(root->left, prev);
+        root->right = prev;
+        root->left = nullptr;
+        prev = root;
+    }
 public:
     void flatten(TreeNode* root) {
-        TreeNode* curr = root;
-        while(curr != nullptr){
-            if(curr->left){
-                TreeNode *pred = curr->left; 
-                while(pred->right != nullptr)
-                    pred = pred->right;
-                
-                pred->right = curr->right;
-                curr->right = curr->left;
-                curr->left = nullptr;
-            }
-            curr = curr->right;
-        }
-    }
+        TreeNode *prev = nullptr;
+        solve(root, prev);
+     }
 };
