@@ -21,9 +21,7 @@ public:
         for(int i=0; i<n; ++i){
             hashTable[nums[i]] = 1;
         }
-        
-        for(int i:hashTable) cout<<i<<" ";
-        
+            
         for(int i=0; i<=n; ++i){
             if(hashTable[i] == 0) return i;
         }
