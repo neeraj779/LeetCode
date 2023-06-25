@@ -33,10 +33,21 @@ public:
         
         
         // approach 3
-        int n = nums.size();
-        int sum = n*(n+1)/2;
-        int numsSum = accumulate(nums.begin(), nums.end(), 0);
-        return sum - numsSum;
+        // int n = nums.size();
+        // int sum = n*(n+1)/2;
+        // int numsSum = accumulate(nums.begin(), nums.end(), 0);
+        // return sum - numsSum;
         
+        // approach 4
+        int xor1{0};
+        int xor2{0};
+        int n = nums.size();
+        for(int i = 1; i<=n; ++i)
+            xor1 ^= i;
+        
+        for(int i = 0; i<n; ++i)
+            xor1 ^= nums[i];
+        
+        return xor1 ^ xor2;    
     }
 };
