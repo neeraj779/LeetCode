@@ -9,7 +9,7 @@ public:
             else if(numbers[i] + numbers[j] < target)
                 i++;
             else{
-                return {i+1, j+1};
+                return {i+1, j+1}; // 1 base indexing
             }
         }
         return {-1, -1};
