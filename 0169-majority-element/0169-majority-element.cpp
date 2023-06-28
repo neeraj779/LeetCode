@@ -7,12 +7,11 @@ public:
             m[nums[i]]++;
         }
         
-        int res = n/2;
-        int ans = 0;
-        for(auto i:m){
-            if(i.second > res) ans = i.first;
-        }
+        for (auto it : m) {
+            if (it.second > (n / 2)) 
+                return it.first;
+        }      
         
-        return ans;
+        return -1;
     }
 };
