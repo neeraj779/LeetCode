@@ -25,7 +25,7 @@ public:
             return;
         }
         // Step 2: Find the next greater element
-        //  and swap it with num[ind]:
+        //  and swap it with nums[ind]:
         for (int i = n - 1; i > ind; --i)
         {
             if (nums[i] > nums[ind])
