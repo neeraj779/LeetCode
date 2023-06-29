@@ -2,7 +2,6 @@ class Solution {
 public:
     bool isAnagram(string s, string t) {
         int a[26] = {0};
-        int b[26] = {0};
         int n = s.length();
         int m = t.length();
         
@@ -13,9 +12,14 @@ public:
         }
         
         for(int i=0; i<m; i++){
-            b[t[i]-'a']++;
+            a[t[i]-'a']--;
         }
-        
-        return equal(a, a+26, b);
+        int l = 0;
+        while(l<26){
+            if(a[l]!=0)
+                return 0;
+            l++;
+        }
+        return 1;
     }
 };
