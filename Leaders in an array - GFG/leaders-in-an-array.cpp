@@ -21,7 +21,7 @@ class Solution{
                 v.push_back(a[i]);
             }
         }
-        sort(v.begin(), v.end(), greater<int>());
+        reverse(v.begin(), v.end());
         return v;
     }
 };
