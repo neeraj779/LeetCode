@@ -1,17 +1,18 @@
 class Solution {
 public:
-      bool isPalindrome(string s) {
+    bool isPalindrome(string s) {
         string temp;
-        for(char i:s){
-            if(isalnum(i)) temp.push_back(tolower(i));
+        for(char c:s){
+            if(isalnum(c))
+                temp.push_back(tolower(c));
         }
-        int start = 0;
-        int end = temp.length()-1;
-        while(start<=end){
-            if(temp[start]!=temp[end]) return false;
-            start++;
-            end--;
+        
+        int i = 0;
+        int j = temp.length() - 1 ;
+        while(i<j){
+            if(temp[i++] != temp[j--])
+                return 0;
         }
-        return true;   
+        return 1;
     }
 };
