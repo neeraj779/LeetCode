@@ -22,7 +22,8 @@ public:
         
         while(head != nullptr){
             // res += head->val*pow(2, numDigits-1);
-            res = res*2 + head->val;
+            // res = res*2 + head->val;
+            res = res<<1 | head->val;
             // numDigits--;
             head = head->next;
         }
