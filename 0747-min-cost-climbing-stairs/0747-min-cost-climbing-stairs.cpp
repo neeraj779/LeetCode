@@ -33,6 +33,7 @@ public:
         // vector<int> dp(n+1, -1);
         // int ans = min(solve(cost, n-1, dp), solve(cost, n-2, dp));
         // return ans;
+        
         int n = cost.size();
         return (solve2(cost, n));
     }
