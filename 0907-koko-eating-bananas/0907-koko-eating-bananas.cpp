@@ -19,9 +19,9 @@ public:
         while(low<=high){
             mid = low + (high - low)/2;
             int res = func(piles, mid, h);
-            if(res == 1) high = mid - 1, k = mid;
+            if(res == 1) high = mid - 1;
             else low = mid + 1;
         }
-        return k;
+        return low;
     }
 };
