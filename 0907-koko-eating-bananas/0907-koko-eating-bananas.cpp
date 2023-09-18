@@ -3,7 +3,8 @@ private:
 int func(vector<int>& piles, int i, int h){
     long long int ans = 0;
     for(int v:piles){
-        ans += (v + i - 1) / i; 
+        // ans += (v + i - 1) / i; 
+        ans += ceil((double)v / (double)i);
         if(ans > h) return 0;
     }
     return 1;
