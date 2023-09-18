@@ -11,7 +11,7 @@ int func(vector<int>& piles, int i, int h){
 
 public:
     int minEatingSpeed(vector<int>& piles, int h) {
-        int low = 1, mid, k = -1;
+        int low = 1, mid;
         int high = *max_element(piles.begin(), piles.end());
         // for(int i=1; i<=n; ++i){
         //     if(func(piles, i, h)) return i;
