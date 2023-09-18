@@ -2,6 +2,7 @@ class Solution {
 public:
     bool isPerfectSquare(int num) {
         int low = 1, high = num, mid;
+        
         while(low<=high){
             mid = low + (high - low)/2;
             long long square = 1LL*mid*mid;
