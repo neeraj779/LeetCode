@@ -21,6 +21,7 @@ public:
         while(low<=high){
             mid = low + (high - low)/2;
             long long int square = 1LL*mid*mid;
+            
             if(square <= x){
                 low = mid + 1;
             }
