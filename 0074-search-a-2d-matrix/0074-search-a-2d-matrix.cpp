@@ -13,10 +13,10 @@ public:
         while(low <= high){
             mid = low + (high - low)/2;
 
-             // Calculate the row number for the element at 'mid'
+            // Calculate the row number for the element at 'mid'
             // Example: If 'mid' is 7 and 'm' is 3, it's like counting rows from the top: 0, 1, 2.
             int rowNumber = mid/m; 
-              // Calculate the column number for the element at 'mid'
+            // Calculate the column number for the element at 'mid'
             // Example: If 'mid' is 7 and 'm' is 3, it's like counting columns from the left: 0, 1, 2.
             int colNumber = mid%m;
             int ele = matrix[rowNumber][colNumber];
