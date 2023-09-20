@@ -1,17 +1,12 @@
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        int row = matrix.size();
-        int col = matrix[0].size();
-        int start = 0;
-        int end = row*col-1;
-        int mid;
-        while(start<=end){
-            mid = start + (end-start)/2;
-            int ele = matrix[mid/col][mid%col];
-            if(ele==target) return 1;
-            else if(ele>target) end = mid-1;
-            else start = mid+1;
+        int n = matrix.size();
+        int m = matrix[0].size();
+
+        for(int i = 0; i<n; ++i){
+            if(matrix[i][0] <= target && matrix[i][m-1] >= target)
+                return binary_search(matrix[i].begin(), matrix[i].end(), target);
         }
         return 0;
     }
