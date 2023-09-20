@@ -15,11 +15,6 @@ public:
                 maxOnes = rowSum;
                 index = i;
             }
-            if(rowSum > maxOnes) {
-                maxOnes = rowSum;
-                index = i;
-            } 
-          
         }
         return{index, maxOnes};
     }
