@@ -10,6 +10,7 @@ public:
         //     }
         // }
         // return i+1;
-        return unique(v.begin(), v.end()) - v.begin();
+        v.erase(unique(v.begin(), v.end()), v.end());
+        return v.size();
     }
 };
