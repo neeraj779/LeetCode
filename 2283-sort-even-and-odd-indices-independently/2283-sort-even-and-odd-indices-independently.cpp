@@ -17,14 +17,8 @@ public:
         sort(even.begin(), even.end());
 
         for (int i = 0; i < n; ++i)
-        {
-            if (i & 1)
-            {
-                v[i] = odd[i/2];
-            }
-            else
-                v[i] = even[i/2];
-        }
+            v[i] = (i&1 == 1) ? odd[i/2] : even[i/2];
+            
         return v;
     }
 };
