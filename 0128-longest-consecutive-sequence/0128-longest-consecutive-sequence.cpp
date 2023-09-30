@@ -45,8 +45,8 @@ public:
         for(auto it:st){
             if(st.find(it - 1) == st.end()){
                 int x = it;
-                int count = 1;
-                while(st.find(x + 1) != st.end()){
+                int count = 0;
+                while(st.find(x) != st.end()){
                     x++;
                     count++;
                 }
