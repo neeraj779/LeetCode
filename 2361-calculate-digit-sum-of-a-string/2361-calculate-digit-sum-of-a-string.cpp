@@ -1,20 +1,19 @@
 class Solution {
 public:
     string digitSum(string s, int k) {
-        while (s.length() > k) {
-            string newS;
-            int i = 0;
-            
-            while (i < s.length()) {
+        while(s.length() > k){ 
+            string temp;
+            int j = 0;
+
+            while(j < s.length()){ 
                 int sum = 0;
-                for (int j = 0; j < k && i < s.length(); j++) {
-                    sum += (s[i] - '0');
-                    i++;
+                for(int i = 0; i < k && j < s.length(); ++i){
+                    sum += s[j] - '0';
+                    ++j;
                 }
-                newS += to_string(sum);
+                temp += to_string(sum);
             }
-            
-           s = newS;
+            s = temp;
         }
         return s;
     }
