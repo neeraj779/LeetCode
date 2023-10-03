@@ -5,17 +5,12 @@ class Solution
         {
             int count = 0;
             map<int, int> m;
-            for (int i = 0; i < nums.size(); ++i)
-            {
-                m[nums[i]]++;
-            }
+            for (int i : nums)
+                m[i]++;
 
-            for (auto i: m)
-            {
-                int x = i.second;
-                count+= (x * (x -1))/2;
-            }
-            
+            for (auto i : m)
+                count+= (i.second * (i.second -1))/2;
+
             return count;
         }
 };
