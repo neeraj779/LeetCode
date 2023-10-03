@@ -4,10 +4,10 @@ class Solution
         int numIdenticalPairs(vector<int> &nums)
         {
             int count = 0;
-            map<int, int> m;
+            unordered_map<int, int> m;
             for (int i : nums){
-                count += m[i];
-                m[i]++;
+                count += m[i]; // how many times its occurred previously but 
+                m[i]++;  // update the value
             }
             return count;
         }
