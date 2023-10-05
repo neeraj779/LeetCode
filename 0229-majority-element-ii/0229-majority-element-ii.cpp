@@ -3,7 +3,7 @@ public:
     vector<int> majorityElement(vector<int>& nums) {
         vector<int> v;
         unordered_map<int, int> m;
-        int mini = ((int)nums.size() / 3)  + 1;
+        int mini = (nums.size() / 3)  + 1;
         for(int i : nums){
             m[i]++;
             if(m[i] == mini)
