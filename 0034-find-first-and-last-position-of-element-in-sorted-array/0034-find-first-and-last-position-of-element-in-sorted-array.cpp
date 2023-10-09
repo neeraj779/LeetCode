@@ -1,36 +1,51 @@
-class Solution {
-public:
-    vector<int> searchRange(vector<int>& nums, int target) {
-        vector<int> v = {-1,-1};
-        int start = 0;
-        int end=nums.size()-1;        
-        
-        int l = search(nums, start, end, target, true);
-        if (l == -1) return v;
-        int h = search(nums, start, end, target, false);
-        v[0] = l;
-        v[1] = h;
-        return v;
-    }
-    
+class Solution
+{
 private:
-    int search(vector<int>& nums, int start, int end, int target, bool flag){
-        int result = -1;
-        int mid = start + (end-start)/2;
-        while(start<=end){
-            if(nums[mid]==target) {
-                result = mid;
-                if(flag) end = mid-1;
-                else start = mid+1;
+    int bs(vector<int> &nums, int target, bool type){
+        int s=0, e=nums.size()-1, mid;
+        int ans = -1;
+        while(s<=e){
+            mid = s + (e-s)/2;
+            if(nums[mid]==target){
+                ans = mid;
+                if(type == 0)
+                    e = mid-1;
+                else
+                    s = mid+1;
             }
-            else if(target>nums[mid]){
-                start = mid+1;
-            }
-            else{
-                end= mid-1;
-            }
-            mid = start + (end-start)/2;
+            else if(nums[mid]<target)
+                s = mid+1;
+            else
+                e = mid-1;
         }
-        return result;
+        return ans;
+    }
+
+public:
+    vector<int> searchRange(vector<int> &nums, int target)
+    {
+        // int f{-1}, l{-1};
+        // int n = nums.size();
+
+        // for (int i = 0; i < n; ++i)
+        // {
+        //     if (nums[i] == target)
+        //     {
+        //         if (f == -1)
+        //             f = i;
+        //         l = i;
+        //     }
+        // }
+        // return {f, l};
+
+        // int first = lower_bound(nums.begin(), nums.end(), target) - nums.begin();
+        
+        // int last = upper_bound(nums.begin(), nums.end(), target) - nums.begin();
+        
+        // if (first == nums.size() || nums[first] != target)
+        //     return {-1, -1};
+        
+        // return {first, last - 1};
+        return {bs(nums, target, 0), bs(nums, target, 1)};
     }
 };
