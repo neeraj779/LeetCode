@@ -2,8 +2,6 @@ class Solution {
 public:
     bool backspaceCompare(string s, string t)
     {
-        string s1 = "";
-        string t1 = "";
         stack<char> st;
         stack<char> st1;
 
@@ -26,7 +24,7 @@ public:
                 st1.pop();
             }
         }
-        
+
         return st == st1;
     }
 };
