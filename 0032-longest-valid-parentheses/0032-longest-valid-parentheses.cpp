@@ -1,6 +1,7 @@
-class Solution {
+class Solution
+{
 public:
-    int longestValidParentheses(std::string s)
+    int longestValidParentheses(string s)
     {
         stack<int> st;
         st.push(-1);
@@ -16,7 +17,7 @@ public:
                 if (st.empty())
                     st.push(i);
                 else
-                    max_length = std::max(max_length, i - st.top());
+                    max_length = max(max_length, i - st.top());
             }
         }
 
