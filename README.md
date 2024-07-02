@@ -13,3 +13,19 @@ If you find an error in one of my solutions, or if you have a better or more eff
 
 
 Happy coding!
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## String
+|  |
+| ------- |
+| [0022-generate-parentheses](https://github.com/neeraj779/LeetCode/tree/master/0022-generate-parentheses) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0022-generate-parentheses](https://github.com/neeraj779/LeetCode/tree/master/0022-generate-parentheses) |
+## Backtracking
+|  |
+| ------- |
+| [0022-generate-parentheses](https://github.com/neeraj779/LeetCode/tree/master/0022-generate-parentheses) |
+<!---LeetCode Topics End-->
